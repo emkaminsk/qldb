@@ -1,0 +1,12 @@
+amazon.ion==0.9.3
+boto3==1.26.97
+botocore==1.29.97
+ionhash==1.2.1
+jmespath==1.0.1
+pip==22.0.2
+pyqldb==3.2.2
+python-dateutil==2.8.2
+s3transfer==0.6.0
+setuptools==67.6.0
+six==1.16.0
+urllib3==1.26.15
