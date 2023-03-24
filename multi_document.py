@@ -19,7 +19,7 @@ if __name__ == '__main__':
 
     # insert a document
     for document in documents:
-        qldb_driver.execute_lambda(lambda executor: qf.insert_documents(executor, table_name, document))
+        qldb_driver.execute_lambda(lambda executor: qf.insert_documents(executor, table_name, document, "name"))
 
     # update a document
     qldb_driver.execute_lambda(lambda executor: qf.update_documents(executor, table_name, updated_document))

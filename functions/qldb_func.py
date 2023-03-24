@@ -11,14 +11,12 @@ def create_table(self, transaction_executor, table_name):
         return 0
 
 # Function to insert a JSON document into a table with a uniqueness constraint.
-def insert_documents(transaction_executor, table_name, document):
-    # Check if doc with GovId:TOYENC486FH exists
+def insert_documents(transaction_executor, table_name, document, key):
     # This is critical to make this transaction idempotent
-    value = document['name']
-    cursor = transaction_executor.execute_statement(f"SELECT * FROM {table_name} WHERE name = ?", value)
+    value = document[key]
+    cursor = transaction_executor.execute_statement(f"SELECT * FROM {table_name} WHERE {key} = ?", value)
     # Check if there is any record in the cursor
     first_record = next(cursor, None)
-
     if first_record:
         # Record already exists, no need to insert
         print(f"Record already exists: {first_record}")

@@ -13,11 +13,13 @@ if __name__ == '__main__':
     document = {'name': 'Olek', 'age': 20}
     updated_document = {'name': 'Olek', 'age': 21}
 
+    # print(type(document))
+
     # create a table
     result = qldb_driver.execute_lambda(lambda executor: qf.create_table(qldb_driver, executor, table_name))
 
     # insert a document
-    qldb_driver.execute_lambda(lambda executor: qf.insert_documents(executor, table_name, document))
+    qldb_driver.execute_lambda(lambda executor: qf.insert_documents(executor, table_name, document, "name"))
 
     # update a document
     qldb_driver.execute_lambda(lambda executor: qf.update_documents(executor, table_name, updated_document))

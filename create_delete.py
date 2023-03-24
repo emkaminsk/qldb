@@ -16,7 +16,7 @@ if __name__ == '__main__':
     result = qldb_driver.execute_lambda(lambda executor: qf.create_table(qldb_driver, executor, table_name))
 
     # insert a document
-    qldb_driver.execute_lambda(lambda executor: qf.insert_documents(executor, table_name, document))
+    qldb_driver.execute_lambda(lambda executor: qf.insert_documents(executor, table_name, document, "name"))
 
     # query the table
     qldb_driver.execute_lambda(lambda executor: qf.read_documents(executor, table_name, document))
