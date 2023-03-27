@@ -9,7 +9,7 @@ if __name__ == '__main__':
     # Execute a happy path: create a table, insert a document, update one and query the table. Log all results to stdout.
 
     # declare variables
-    table_name = 'Malgorzata'
+    table_name = 'People'
     document = {'name': 'Olek', 'age': 20}
     updated_document = {'name': 'Olek', 'age': 21}
 

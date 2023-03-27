@@ -24,4 +24,15 @@ if __name__ == '__main__':
     qldb_driver.execute_lambda(lambda executor: qf.insert_documents(executor, table_name, document, "bomFormat"))
 
     # query the table
-    qldb_driver.execute_lambda(lambda executor: qf.read_documents(executor, table_name, document))
+    qldb_driver.execute_lambda(lambda executor: qf.post_query(executor, f"Select count(*) from {table_name}"))
+
+    '''
+    document_new = {
+   "a": 1,
+   "b": "2",
+   "c": [ 1, 2, 3]
+}
+
+    # insert a document
+    qldb_driver.execute_lambda(lambda executor: qf.insert_documents(executor, table_name, document_new, "a"))
+    '''

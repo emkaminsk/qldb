@@ -38,6 +38,12 @@ def read_documents(transaction_executor, table_name, document):
     for doc in cursor:
         print(' | '.join([str(doc[str(field)]) for field in fields]))
 
+# Run a query from parameter
+def post_query(transaction_executor, query):
+    cursor = transaction_executor.execute_statement(query)
+    for doc in cursor:
+        print(str(doc))
+
 # Delete documents        
 def delete_documents(transaction_executor, table_name, key, value):
     transaction_executor.execute_statement(f"DELETE FROM {table_name} WHERE {key} = ?", value)

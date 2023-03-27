@@ -7,7 +7,7 @@ if __name__ == '__main__':
     print(f"Starting {os.path.basename(__file__)}")
     qldb_driver = QldbDriver(ledger_name='mkwest2ledger', region_name='eu-west-2')
 
-    # Execute a happy path: create a table, insert a document, and query the table. Log all results to stdout.
+    # Execute a happy path: create a table, insert a list of documents, and query the table. Log all results to stdout.
 
     # declare variables
     table_name = 'multi_docs_table'
